@@ -2,7 +2,7 @@
 
 **An agentic revenue-recovery decision engine that measures what it *caused*, not what it collected.**
 
-Built for the Razorpay AI Buildathon, Track 03 — AI Revenue Recovery.
+
 
 > Every recovery tool reports the money that arrived after it acted. A large share of that money
 > was arriving anyway. RecoveryOS prices every intervention against doing nothing, refuses to act
@@ -512,7 +512,6 @@ training data); a real DLT template registry; and an approvals queue for the esc
 
 ## References
 
-- Razorpay AI Buildathon — <https://razorpay.com/buildathon/>
 - Razorpay Agent Studio — <https://razorpay.com/agent-studio/> and the FTX'26 launch announcement
 - Razorpay UPI error codes — <https://razorpay.com/docs/errors/payments/upi/>
 - Razorpay on RBI e-mandate regulations — <https://razorpay.com/blog/rbi-e-mandate-regulations/>
@@ -526,28 +525,6 @@ training data); a real DLT template registry; and an approvals queue for the esc
 
 ---
 
-## Five-minute demo
-
-1. **The problem, in one number** (45s) — Overview. ₹4.25L recovered, of which ₹1.04L was
-   arriving anyway. The incremental number is the only one that belongs to us.
-2. **A decision, fully opened up** (60s) — a `CARD_EXPIRED` case. Baseline, seven scored actions,
-   the utility arithmetic visible, the retry refused because no retry clears a dead card.
-3. **Knowing when not to act** (45s) — `no-action` scenario. Nothing is blocked, the customer is
-   reachable, and the engine still declines: history says they fix their own card in days.
-4. **Two cases, one inbox** (45s) — `arbitration`. The contact slot is auctioned; the loser is
-   queued and told why. No per-case system can see this.
-5. **Bounded autonomy** (60s) — `regulator` and `rogue-llm`. Blocks that cite the RBI and TRAI;
-   the model proposing a forbidden action and getting nowhere; the test that runs the whole book
-   against a hostile model and asserts nothing changed.
-6. **The measurement** (45s) — Evaluation. Four policies, one book. The one policy that beats us
-   does it with 195 violations and 19 lost customers. Seven seeds, range shown, worst seed as the
-   headline.
-
-Closing line:
-
-> **Don't recover more payments. Recover more revenue — and prove it.**
-
----
 
 *Synthetic data. Simulated outcomes. No real merchant, customer or payment appears in this
 project, and no real customer was contacted.*

@@ -1,0 +1,37 @@
+{
+  "policy_id": "MERCHANT_DEFAULT_V1",
+  "merchant_name": "Northstar Fitness (synthetic merchant)",
+  "description": "Merchant-configured bounds on autonomous recovery. The agent proposes; this file disposes.",
+  "max_retry_attempts": 2,
+  "min_retry_gap_hours": 20,
+  "max_contacts_per_24h": 1,
+  "max_contacts_per_7d": 2,
+  "human_approval_threshold_paise": 10000000,
+  "max_discount_percent": 0,
+  "allowed_actions": [
+    "NO_ACTION",
+    "DELAYED_RETRY",
+    "PAYMENT_LINK",
+    "CUSTOMER_MESSAGE",
+    "HUMAN_ESCALATION"
+  ],
+  "quiet_hours_end_hour": 10,
+  "quiet_hours_start_hour": 21,
+  "min_utility_paise": 5000,
+  "intervention_budget_paise": 250000,
+  "max_iterations_per_case": 6,
+  "holdout_fraction": 0.2,
+  "action_costs_paise": {
+    "NO_ACTION": 0,
+    "DELAYED_RETRY": 200,
+    "PAYMENT_LINK": 400,
+    "CUSTOMER_MESSAGE": 85,
+    "HUMAN_ESCALATION": 45000
+  },
+  "cost_basis_note": "Heuristic unit economics, not measured merchant costs. Gateway retry ~INR 2, hosted payment link ~INR 4, WhatsApp utility template ~INR 0.85, and ~25 minutes of a fully-loaded collections owner ~INR 450. Escalation is priced honestly on purpose: a system that hands everything to a human has not automated anything.",
+  "goodwill_cost_per_contact_paise": 1500,
+  "goodwill_cost_note": "Shadow price of one unit of customer attention. Rises convexly with recent contacts; calibrated so that a third contact in a week must be worth more than roughly INR 135 of incremental recovery to be taken.",
+  "human_review_capacity": 5,
+  "min_utility_note": "Floor on expected incremental value before a human is put on a case. Automated actions are not subject to it -- they only have to beat doing nothing, which is what NO_ACTION scoring zero already enforces.",
+  "holdout_note": "Share of cases held out untouched as a randomised control arm. Larger than a real merchant would tolerate, because with a small book the counterfactual estimate is otherwise too noisy to report honestly."
+}

@@ -1,0 +1,665 @@
+{
+  "seed": 42,
+  "n_cases": 150,
+  "clock": "2026-09-24T10:30:00",
+  "disclaimer": "Controlled simulation on synthetic cases. These figures describe a reproducible model environment, not real merchants, customers, payments or recovered revenue, and support no causal claim about the real world.",
+  "oracle": {
+    "recoverable_paise": 114244300,
+    "recoverable_cases": 140,
+    "self_cure_paise": 14160900,
+    "self_cure_cases": 31,
+    "winnable_paise": 100083400,
+    "total_at_risk_paise": 122610400,
+    "note": "One lawful action per case with perfect foresight. Not achievable by any real system; used as a denominator, not a target."
+  },
+  "policies": {
+    "NAIVE": {
+      "policy": "NAIVE",
+      "description": "Chase every failure immediately. No economics, no fatigue, no compliance checks.",
+      "seed": 42,
+      "cases": 150,
+      "revenue_at_risk_paise": 122610400,
+      "recovered_paise": 20054100,
+      "cases_recovered": 61,
+      "holdout_cases": 26,
+      "holdout_at_risk_paise": 18286700,
+      "holdout_recovered_paise": 3790700,
+      "holdout_samples": [
+        [
+          69300,
+          69300
+        ],
+        [
+          281000,
+          0
+        ],
+        [
+          188000,
+          0
+        ],
+        [
+          137400,
+          0
+        ],
+        [
+          687000,
+          0
+        ],
+        [
+          400100,
+          400100
+        ],
+        [
+          269500,
+          0
+        ],
+        [
+          1155500,
+          0
+        ],
+        [
+          265500,
+          0
+        ],
+        [
+          1693200,
+          0
+        ],
+        [
+          159300,
+          0
+        ],
+        [
+          404300,
+          0
+        ],
+        [
+          1124200,
+          1124200
+        ],
+        [
+          2789600,
+          0
+        ],
+        [
+          944900,
+          944900
+        ],
+        [
+          217700,
+          0
+        ],
+        [
+          494800,
+          0
+        ],
+        [
+          132500,
+          0
+        ],
+        [
+          200500,
+          200500
+        ],
+        [
+          305200,
+          0
+        ],
+        [
+          2924100,
+          0
+        ],
+        [
+          1840000,
+          0
+        ],
+        [
+          1051700,
+          1051700
+        ],
+        [
+          325100,
+          0
+        ],
+        [
+          196300,
+          0
+        ],
+        [
+          30000,
+          0
+        ]
+      ],
+      "treated_cases": 124,
+      "treated_at_risk_paise": 104323700,
+      "treated_recovered_paise": 16263400,
+      "treated_selfcure_paise": 10370200,
+      "treated_selfcure_cases": 25,
+      "interventions": 477,
+      "customer_contacts": 132,
+      "retries": 345,
+      "human_escalations": 0,
+      "spend_paise": 80220,
+      "interventions_on_self_curers": 25,
+      "guardrail_violations": 405,
+      "violation_rules": {
+        "POLICY-INSTRUMENT-INVALID": 205,
+        "MERCHANT-RETRY-CAP": 205,
+        "MERCHANT-CONTACT-CAP-24H": 9,
+        "MERCHANT-CONTACT-CAP-7D": 78,
+        "POLICY-PROMISE-ACTIVE": 12,
+        "POLICY-COMPLIANCE-BLOCKED": 36,
+        "RBI-EM-2026-AFA-CEILING": 36,
+        "TRAI-DLT-CONSENT": 18,
+        "CONSUMER-OPT-OUT": 18
+      },
+      "customers_opted_out": 11,
+      "stopped_cases": 89,
+      "stop_reasons": {
+        "MAX_ITERATIONS": 58,
+        "CUSTOMER_OPTED_OUT": 11,
+        "HELD_OUT": 26
+      },
+      "holdout_value_rate": 0.2073,
+      "counterfactual_paise": 21625544,
+      "incremental_paise": -5362144,
+      "value_recovery_rate": 0.1636,
+      "case_recovery_rate": 0.4067,
+      "incremental_per_intervention_paise": -11241,
+      "incremental_per_contact_paise": -40622,
+      "actions_per_case": 3.85,
+      "return_on_spend": -66.84,
+      "incremental_interval_paise": [
+        -31859527,
+        11101043
+      ],
+      "counterfactual_is_precise": true,
+      "true_counterfactual_paise": 10370200,
+      "true_incremental_paise": 5893200,
+      "true_incremental_per_contact_paise": 44645,
+      "basis": "Controlled simulation on synthetic cases. Not real merchant data.",
+      "capture_rate": 0.1755
+    },
+    "RULEBOOK": {
+      "policy": "RULEBOOK",
+      "description": "Standard dunning ladder: failure type maps to a fixed action. Honours operational caps only.",
+      "seed": 42,
+      "cases": 150,
+      "revenue_at_risk_paise": 122610400,
+      "recovered_paise": 41805900,
+      "cases_recovered": 85,
+      "holdout_cases": 26,
+      "holdout_at_risk_paise": 18286700,
+      "holdout_recovered_paise": 3790700,
+      "holdout_samples": [
+        [
+          69300,
+          69300
+        ],
+        [
+          281000,
+          0
+        ],
+        [
+          188000,
+          0
+        ],
+        [
+          137400,
+          0
+        ],
+        [
+          687000,
+          0
+        ],
+        [
+          400100,
+          400100
+        ],
+        [
+          269500,
+          0
+        ],
+        [
+          1155500,
+          0
+        ],
+        [
+          265500,
+          0
+        ],
+        [
+          1693200,
+          0
+        ],
+        [
+          159300,
+          0
+        ],
+        [
+          404300,
+          0
+        ],
+        [
+          1124200,
+          1124200
+        ],
+        [
+          2789600,
+          0
+        ],
+        [
+          944900,
+          944900
+        ],
+        [
+          217700,
+          0
+        ],
+        [
+          494800,
+          0
+        ],
+        [
+          132500,
+          0
+        ],
+        [
+          200500,
+          200500
+        ],
+        [
+          305200,
+          0
+        ],
+        [
+          2924100,
+          0
+        ],
+        [
+          1840000,
+          0
+        ],
+        [
+          1051700,
+          1051700
+        ],
+        [
+          325100,
+          0
+        ],
+        [
+          196300,
+          0
+        ],
+        [
+          30000,
+          0
+        ]
+      ],
+      "treated_cases": 124,
+      "treated_at_risk_paise": 104323700,
+      "treated_recovered_paise": 38015200,
+      "treated_selfcure_paise": 10370200,
+      "treated_selfcure_cases": 25,
+      "interventions": 350,
+      "customer_contacts": 304,
+      "retries": 46,
+      "human_escalations": 0,
+      "spend_paise": 75045,
+      "interventions_on_self_curers": 25,
+      "guardrail_violations": 175,
+      "violation_rules": {
+        "MERCHANT-CONTACT-CAP-24H": 13,
+        "MERCHANT-CONTACT-CAP-7D": 148,
+        "POLICY-PROMISE-ACTIVE": 12,
+        "TRAI-DLT-CONSENT": 18,
+        "CONSUMER-OPT-OUT": 18
+      },
+      "customers_opted_out": 19,
+      "stopped_cases": 65,
+      "stop_reasons": {
+        "MAX_ITERATIONS": 26,
+        "CUSTOMER_OPTED_OUT": 19,
+        "HELD_OUT": 26
+      },
+      "holdout_value_rate": 0.2073,
+      "counterfactual_paise": 21625544,
+      "incremental_paise": 16389656,
+      "value_recovery_rate": 0.341,
+      "case_recovery_rate": 0.5667,
+      "incremental_per_intervention_paise": 46827,
+      "incremental_per_contact_paise": 53913,
+      "actions_per_case": 2.82,
+      "return_on_spend": 218.4,
+      "incremental_interval_paise": [
+        -10107727,
+        32852843
+      ],
+      "counterfactual_is_precise": true,
+      "true_counterfactual_paise": 10370200,
+      "true_incremental_paise": 27645000,
+      "true_incremental_per_contact_paise": 90937,
+      "basis": "Controlled simulation on synthetic cases. Not real merchant data.",
+      "capture_rate": 0.3659
+    },
+    "RULEBOOK+RULES": {
+      "policy": "RULEBOOK+RULES",
+      "description": "The same dunning ladder, fully compliant. The fair like-for-like comparison: identical guardrails, no economics.",
+      "seed": 42,
+      "cases": 150,
+      "revenue_at_risk_paise": 122610400,
+      "recovered_paise": 37663400,
+      "cases_recovered": 78,
+      "holdout_cases": 26,
+      "holdout_at_risk_paise": 18286700,
+      "holdout_recovered_paise": 3790700,
+      "holdout_samples": [
+        [
+          69300,
+          69300
+        ],
+        [
+          281000,
+          0
+        ],
+        [
+          188000,
+          0
+        ],
+        [
+          137400,
+          0
+        ],
+        [
+          687000,
+          0
+        ],
+        [
+          400100,
+          400100
+        ],
+        [
+          269500,
+          0
+        ],
+        [
+          1155500,
+          0
+        ],
+        [
+          265500,
+          0
+        ],
+        [
+          1693200,
+          0
+        ],
+        [
+          159300,
+          0
+        ],
+        [
+          404300,
+          0
+        ],
+        [
+          1124200,
+          1124200
+        ],
+        [
+          2789600,
+          0
+        ],
+        [
+          944900,
+          944900
+        ],
+        [
+          217700,
+          0
+        ],
+        [
+          494800,
+          0
+        ],
+        [
+          132500,
+          0
+        ],
+        [
+          200500,
+          200500
+        ],
+        [
+          305200,
+          0
+        ],
+        [
+          2924100,
+          0
+        ],
+        [
+          1840000,
+          0
+        ],
+        [
+          1051700,
+          1051700
+        ],
+        [
+          325100,
+          0
+        ],
+        [
+          196300,
+          0
+        ],
+        [
+          30000,
+          0
+        ]
+      ],
+      "treated_cases": 124,
+      "treated_at_risk_paise": 104323700,
+      "treated_recovered_paise": 33872700,
+      "treated_selfcure_paise": 10370200,
+      "treated_selfcure_cases": 25,
+      "interventions": 158,
+      "customer_contacts": 112,
+      "retries": 46,
+      "human_escalations": 0,
+      "spend_paise": 42030,
+      "interventions_on_self_curers": 20,
+      "guardrail_violations": 0,
+      "violation_rules": {},
+      "customers_opted_out": 0,
+      "stopped_cases": 72,
+      "stop_reasons": {
+        "NO_VALID_ACTIONS": 51,
+        "MAX_ITERATIONS": 1,
+        "HELD_OUT": 26
+      },
+      "holdout_value_rate": 0.2073,
+      "counterfactual_paise": 21625544,
+      "incremental_paise": 12247156,
+      "value_recovery_rate": 0.3072,
+      "case_recovery_rate": 0.52,
+      "incremental_per_intervention_paise": 77513,
+      "incremental_per_contact_paise": 109349,
+      "actions_per_case": 1.27,
+      "return_on_spend": 291.39,
+      "incremental_interval_paise": [
+        -14250227,
+        28710343
+      ],
+      "counterfactual_is_precise": true,
+      "true_counterfactual_paise": 10370200,
+      "true_incremental_paise": 23502500,
+      "true_incremental_per_contact_paise": 209843,
+      "basis": "Controlled simulation on synthetic cases. Not real merchant data.",
+      "capture_rate": 0.3297
+    },
+    "RECOVERYOS": {
+      "policy": "RECOVERYOS",
+      "description": "Self-cure baseline, incremental utility, fatigue pricing, full guardrails, stopping rules, batch allocation.",
+      "seed": 42,
+      "cases": 150,
+      "revenue_at_risk_paise": 122610400,
+      "recovered_paise": 42503600,
+      "cases_recovered": 81,
+      "holdout_cases": 26,
+      "holdout_at_risk_paise": 18286700,
+      "holdout_recovered_paise": 3790700,
+      "holdout_samples": [
+        [
+          69300,
+          69300
+        ],
+        [
+          281000,
+          0
+        ],
+        [
+          188000,
+          0
+        ],
+        [
+          137400,
+          0
+        ],
+        [
+          687000,
+          0
+        ],
+        [
+          400100,
+          400100
+        ],
+        [
+          269500,
+          0
+        ],
+        [
+          1155500,
+          0
+        ],
+        [
+          265500,
+          0
+        ],
+        [
+          1693200,
+          0
+        ],
+        [
+          159300,
+          0
+        ],
+        [
+          404300,
+          0
+        ],
+        [
+          1124200,
+          1124200
+        ],
+        [
+          2789600,
+          0
+        ],
+        [
+          944900,
+          944900
+        ],
+        [
+          217700,
+          0
+        ],
+        [
+          494800,
+          0
+        ],
+        [
+          132500,
+          0
+        ],
+        [
+          200500,
+          200500
+        ],
+        [
+          305200,
+          0
+        ],
+        [
+          2924100,
+          0
+        ],
+        [
+          1840000,
+          0
+        ],
+        [
+          1051700,
+          1051700
+        ],
+        [
+          325100,
+          0
+        ],
+        [
+          196300,
+          0
+        ],
+        [
+          30000,
+          0
+        ]
+      ],
+      "treated_cases": 124,
+      "treated_at_risk_paise": 104323700,
+      "treated_recovered_paise": 38712900,
+      "treated_selfcure_paise": 10370200,
+      "treated_selfcure_cases": 25,
+      "interventions": 160,
+      "customer_contacts": 100,
+      "retries": 44,
+      "human_escalations": 16,
+      "spend_paise": 765335,
+      "interventions_on_self_curers": 9,
+      "guardrail_violations": 0,
+      "violation_rules": {},
+      "customers_opted_out": 0,
+      "stopped_cases": 45,
+      "stop_reasons": {
+        "MAX_ITERATIONS": 4,
+        "CONTACT_CAP_REACHED": 7,
+        "RETRY_CAP_REACHED": 8,
+        "APPROVAL_REQUIRED": 13,
+        "CUSTOMER_OPTED_OUT": 3,
+        "HELD_OUT": 26,
+        "INSTRUMENT_UNRECOVERABLE": 3
+      },
+      "holdout_value_rate": 0.2073,
+      "counterfactual_paise": 21625544,
+      "incremental_paise": 17087356,
+      "value_recovery_rate": 0.3467,
+      "case_recovery_rate": 0.54,
+      "incremental_per_intervention_paise": 106795,
+      "incremental_per_contact_paise": 170873,
+      "actions_per_case": 1.29,
+      "return_on_spend": 22.33,
+      "incremental_interval_paise": [
+        -9410027,
+        33550543
+      ],
+      "counterfactual_is_precise": true,
+      "true_counterfactual_paise": 10370200,
+      "true_incremental_paise": 28342700,
+      "true_incremental_per_contact_paise": 283427,
+      "basis": "Controlled simulation on synthetic cases. Not real merchant data.",
+      "capture_rate": 0.372
+    }
+  }
+}
